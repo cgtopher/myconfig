@@ -2,26 +2,11 @@
 
 export PATH=~/bin:$PATH
 export PERL5LIB=/Users/cgaunt/perl5
-alias kubectl='~/bin/kubectl'
+alias k='sudo ~/bin/kubectl --kubeconfig=/etc/rancher/k3s/k3s.yaml'
+alias pip='pip3'
 
-function cjdk(){
-    version=$1
-    if [ $version == 13 ]; then
-        ## Set to default
-        export JAVA_HOME=''
-        echo "changed to java 13 [ default ]"
-    elif [ $version == 11 ]; then
-        export JAVA_HOME=/usr/local/opt/openjdk@11
-        echo "changed to java 11..."
-    elif [ $version == 12 ]; then
-        export JAVA_HOME=/usr/local/opt/openjdk@12
-        echo "changed to java 12..."
-    else
-        echo "specified java version doesn't exist..."
-    fi
-
-}
-export -f cjdk
+# k3d
+export KUBECONFIG=$(k3d get-kubeconfig --name='k3s-default')
 
 
 # look and feel
