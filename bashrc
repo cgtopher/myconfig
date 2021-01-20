@@ -60,5 +60,7 @@ function parse_git_dirty {
 
 export PS1="\[\e[32m\]\u\[\e[m\]\[\e[32m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]\[\e[32m\] \w\[\e[m\]\[\e[36m\]\`parse_git_branch\`\[\e[m\] "
 
-
-
+# If not running interactively, do not do anything
+[[ $- != *i* ]] && return
+# Otherwise start tmux
+[[ -z "$TMUX" ]] && exec tmux
