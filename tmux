@@ -16,6 +16,7 @@ bind-key l select-pane -R
 setw -g mouse on
 
 # theme
+# git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
 source-file "${HOME}/.tmux-themepack/powerline/default/blue.tmuxtheme"
 
 # Clipboard
