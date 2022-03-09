@@ -38,3 +38,11 @@ setw -g mode-keys vi
 unbind -T copy-mode-vi Enter
 bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xclip -selection c"
 bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -in -selection clipboard"
+
+
+### Use with wslg, download win32yank.exe first
+#setw -g mode-keys vi
+## Update default binding of `Enter` to also use copy-pipe
+#unbind -T copy-mode-vi Enter
+#bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "win32yank.exe -i"
+#bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "win32yank.exe -i"
